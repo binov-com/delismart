@@ -1,11 +1,11 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: "AIzaSyCkI2vocVbE8OESNubv1WmFBlanvkDt5FE",
-    authDomain: "bdeliv-58794.firebaseapp.com",
-    databaseURL: "https://bdeliv-58794.firebaseio.com",
-    projectId: "bdeliv-58794",
-    storageBucket: "bdeliv-58794.appspot.com",
-    messagingSenderId: "546270179960"
+    apiKey: "AIzaSyBSWEqJSmSZjBBXiTqfw4cHTem5mt5ILk8",
+    authDomain: "delismart-2de8b.firebaseapp.com",
+    databaseURL: "https://delismart-2de8b.firebaseio.com",
+    projectId: "delismart-2de8b",
+    storageBucket: "delismart-2de8b.appspot.com",
+    messagingSenderId: "583716773887"
   }
 };
