@@ -9,7 +9,7 @@ import 'rxjs/add/operator/take'; // unsubscripe after take the value(s)
   templateUrl: './product-form.component.html',
   styleUrls: ['./product-form.component.css']
 })
-export class ProductFormComponent implements OnInit {
+export class ProductFormComponent {
   categories$;
   id;
   product = {};
@@ -29,10 +29,14 @@ export class ProductFormComponent implements OnInit {
     if(this.id) this.productService.update(this.id, product);
     else this.productService.create(product);
 
-    this.router.navigate['/admin/products'];
+    this.router.navigate(['/admin/products']);
   }
 
-  ngOnInit() {
+  delete() {
+    if(!confirm('Êtes vous sûr de la suppression de ce produit ?')) return;
+  
+    this.productService.delete(this.id);
+    this.router.navigate(['/admin/products']);
   }
-
+  
 }
