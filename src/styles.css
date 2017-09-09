@@ -4,3 +4,8 @@
 body {
     padding-top: 80px;
 }
+
+.alert {
+    padding-top: 0.20rem;
+    padding-bottom: 0.20rem;
+}
