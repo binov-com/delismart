@@ -6,18 +6,18 @@
 
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
         <a class="nav-link" routerLink="/">Accueil<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
         <a class="nav-link" routerLink="/products">Nos Produits</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
         <a class="nav-link" routerLink="/shopping-cart">Panier</a>
       </li>
       <ng-template #anonymousUser>
           <li class="nav-item">
-              <a class="nav-link" routerLink="/login">Connexion</a>
+              <a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/login">Connexion</a>
           </li>
       </ng-template>
       <li ngbDropdown *ngIf="appUser; else anonymousUser" class="nav-item dropdown">
