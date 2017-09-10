@@ -14,8 +14,8 @@
     (reload)="reloadItems($event)"
 >
     <data-table-column
-        [property]="'tilte'"
-        [header]="Libellé"
+        [property]="'title'"
+        [header]="Libelle"
         [sortable]="true"
         [resizable]="true"
     >
@@ -27,16 +27,16 @@
         [sortable]="true"
         [resizable]="true"
     >
-        <ng-template #dataTableCell let-item="product">
-            {{ product.price | currency:'EUR':true }}
+        <ng-template #dataTableCell let-item="item">
+            {{ item.price | currency:'EUR':true }}
         </ng-template>
     </data-table-column>
 
     <data-table-column
         [property]="'$key'"
     >
-        <ng-template #dataTableCell let-item="product">
-            <a [routerLink]="['/admin/products/', p.$key]">Editer</a>
+        <ng-template #dataTableCell let-item="item">
+            <a [routerLink]="['/admin/products/', item.$key]">Editer</a>
         </ng-template>
     </data-table-column>
 </data-table>
