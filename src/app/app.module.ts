@@ -31,6 +31,7 @@ import { AdminAuthGuard } from './admin-auth-guard/admin-auth-guard.service';
 import { UserService } from './user/user.service';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { DataTableModule } from "angular-4-data-table";
+import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { DataTableModule } from "angular-4-data-table";
     AdminProductsComponent,
     AdminOrdersComponent,
     LoginComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ProductFilterComponent
   ],
   imports: [
     BrowserModule,
