@@ -9,13 +9,14 @@
 </p>
 
 <data-table
+    headerTitle="Produits"
     [items]="items"
     [itemCount]="itemCount"
     (reload)="reloadItems($event)"
 >
     <data-table-column
         [property]="'title'"
-        [header]="Libelle"
+        [header]="'Libellé'"
         [sortable]="true"
         [resizable]="true"
     >
@@ -23,7 +24,7 @@
 
     <data-table-column
         [property]="'price'"
-        [header]="Prix"
+        [header]="'Prix'"
         [sortable]="true"
         [resizable]="true"
     >
