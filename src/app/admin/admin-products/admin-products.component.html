@@ -7,21 +7,34 @@
         (keyup)="filter(query.value)"
         type="text" class="form-control" placeholder="Rechercher...">
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Libellé</th>
-            <th>Prix</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let p of filteredProducts">
-            <td>{{ p.title }}</td>
-            <td>{{ p.price }}</td>
-            <td>
-                <a [routerLink]="['/admin/products/', p.$key]">Editer</a>
-            </td>
-        </tr>
-    </tbody>
-</table>
+
+<data-table
+    [items]="items"
+    [itemCount]="itemCount"
+    (reload)="reloadItems($event)"
+>
+    <data-table-column
+        [property]="'tilte'"
+        [header]="Libellé"
+        [sortable]="true"
+        [resizable]="true"
+    >
+
+    <data-table-column
+        [property]="'price'"
+        [header]="Prix"
+        [sortable]="true"
+        [resizable]="true"
+    >
+    <ng-template #dataTableCell let-item="product">
+        {{ product.price | currency:'EUR':true }}
+    </ng-template>
+
+    <data-table-column
+        [property]="'$key'"
+    >
+    <ng-template #dataTableCell let-item="product">
+        <a [routerLink]="['/admin/products/', p.$key]">Editer</a>
+    </ng-template>
+
+</data-table>
