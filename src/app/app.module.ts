@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { CustomFormsModule } from "ng2-validation";
-import { DataTableModule } from "angular-4-data-table";
 
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from "angularfire2/database";
@@ -31,6 +30,7 @@ import { AuthGuard } from "./auth-guard/auth-guard.service";
 import { AdminAuthGuard } from './admin-auth-guard/admin-auth-guard.service';
 import { UserService } from './user/user.service';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
+import { DataTableModule } from "angular-4-data-table";
 
 @NgModule({
   declarations: [
@@ -97,5 +97,6 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
     ProductService
   ],
   bootstrap: [AppComponent]
+  //schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }

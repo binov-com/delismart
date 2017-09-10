@@ -1,3 +1,4 @@
+import { Product } from './../../models/product';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from './../../product/product.service';
 import { CategoryService } from './../../category/category.service';
@@ -12,7 +13,7 @@ import 'rxjs/add/operator/take'; // unsubscripe after take the value(s)
 export class ProductFormComponent {
   categories$;
   id;
-  product = {};
+  product: Product = { title: '', price: 0, category: '', imageUrl: '' }
 
   constructor(
     private router: Router,
