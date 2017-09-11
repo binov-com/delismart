@@ -8,14 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./product-card.component.css']
 })
 export class ProductCardComponent {
-  @Input('product') product: Product = { title: '', category: '', price: 0, imageUrl: '' };
+  @Input('product') product: Product; // = { $key: '', title: '', category: '', price: 0, imageUrl: '' };
   @Input('showActions') showActions: boolean = true;
 
   constructor(private cartService: ShoppingCartService) { }
 
   addToCart(product: Product) {
     this.cartService.addToCart(product);
-    
   }
 
 }
