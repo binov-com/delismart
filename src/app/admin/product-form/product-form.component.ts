@@ -13,7 +13,7 @@ import 'rxjs/add/operator/take'; // unsubscripe after take the value(s)
 export class ProductFormComponent {
   categories$;
   id;
-  product: Product; // = { title: '', price: 0, category: '', imageUrl: '' }
+  product: Product = { $key: '', title: '', price: 0, category: '', imageUrl: '' }
 
   constructor(
     private router: Router,
