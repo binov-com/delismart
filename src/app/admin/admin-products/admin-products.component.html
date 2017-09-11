@@ -8,6 +8,26 @@
         type="text" class="form-control" placeholder="Rechercher...">
 </p>
 
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Produit</th>
+            <th>Prix</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of items">
+            <td><div class="thumbnail" [style.backgroundImage]="'url(' + item.imageUrl + ')'"></div></td>
+            <td>{{ item.title }}</td>
+            <td>{{ item.price | currency:'EUR':true }}</td>
+            <td><a [routerLink]="['/admin/products/', item.$key]">Editer</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<!--
 <data-table
     headerTitle="Produits"
     [items]="items"
@@ -41,3 +61,4 @@
         </ng-template>
     </data-table-column>
 </data-table>
+-->
