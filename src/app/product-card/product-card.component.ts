@@ -9,7 +9,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProductCardComponent {
   @Input('product') product: Product; // = { $key: '', title: '', category: '', price: 0, imageUrl: '' };
-  @Input('showActions') showActions: boolean = true;
+  @Input('show-actions') showActions: boolean = true;
+  @Input('shopping-cart') shoppingCart;
 
   constructor(private cartService: ShoppingCartService) { }
 
@@ -17,4 +18,10 @@ export class ProductCardComponent {
     this.cartService.addToCart(product);
   }
 
+  getQuantity() {
+    if(!this.shoppingCart) return 0;
+
+    let item = this.shoppingCart.items[this.product.$key];
+    return item ? item.quantity : 0;
+  }
 }
