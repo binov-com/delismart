@@ -6,12 +6,10 @@ export class ShoppingCart {
 
     constructor(public itemsMap: { [productId: string]: ShoppingCartItem }) {
         this.itemsMap = itemsMap || { };
+
         for(let productId in itemsMap) {
             let item = itemsMap[productId];
-            let shoppingCartItem = new ShoppingCartItem();
-            Object.assign(shoppingCartItem, item);
-            shoppingCartItem.$key = productId;
-            this.items.push(shoppingCartItem);
+            this.items.push(new ShoppingCartItem({ $key: productId, ...item }));
         }    
      }
 
