@@ -1,4 +1,12 @@
 
+.thumbnail {
+    width: 250px;
+    height: 250px;
+    margin: 0.5rem auto;
+    border-radius: 25%;
+    background-size: cover;
+}
+
 .card {
     margin-bottom: 1.5rem;
 }
