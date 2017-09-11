@@ -1,3 +1,4 @@
+import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
 import { ProductService } from './product/product.service';
 import { CategoryService } from './category/category.service';
 import { environment } from "../environments/environment";
@@ -98,7 +99,8 @@ import { ProductCardComponent } from './product-card/product-card.component';
     AdminAuthGuard,
     UserService,
     CategoryService,
-    ProductService
+    ProductService,
+    ShoppingCartService
   ],
   bootstrap: [AppComponent]
   //schemas: [CUSTOM_ELEMENTS_SCHEMA],

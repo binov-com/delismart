@@ -19,8 +19,6 @@ export class BsNavbarComponent {
 
   logout() {
     this.auth.logout();
-
-    this.router.navigate(['/']);
   }
 
 }
