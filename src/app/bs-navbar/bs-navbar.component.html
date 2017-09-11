@@ -13,7 +13,12 @@
         <a class="nav-link" routerLink="/products">Nos Produits</a>
       </li>
       <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-        <a class="nav-link" routerLink="/shopping-cart">Panier</a>
+        <a class="nav-link" routerLink="/shopping-cart">
+          Panier
+          <span class="badge badge-warning badge-pill">
+            {{ shoppingCartItemCount }}
+          </span>
+        </a>
       </li>
       <ng-template #anonymousUser>
           <li class="nav-item">
