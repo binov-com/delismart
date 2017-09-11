@@ -12,6 +12,7 @@ import { AuthService } from "../auth/auth.service";
   styleUrls: ['./bs-navbar.component.css']
 })
 export class BsNavbarComponent implements OnInit{
+  navbarCollapsed: boolean = true;
   appUser: AppUser;
   cart$: Observable<ShoppingCart>;
 
@@ -25,6 +26,10 @@ export class BsNavbarComponent implements OnInit{
 
   logout() {
     this.auth.logout();
+  }
+
+  navbarToggle() {
+    this.navbarCollapsed = !this.navbarCollapsed;
   }
 
 }

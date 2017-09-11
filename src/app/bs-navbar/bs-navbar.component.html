@@ -1,28 +1,30 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
   <a class="navbar-brand" routerLink="/">DeliSmart</a>
-  <button class="navbar-toggler" type="button" (click)="navbarCollapsed = !navbarCollapsed" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" (click)="navbarToggle()" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" [ngbCollapse]="navbarCollapsed" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-        <a class="nav-link" routerLink="/">Accueil<span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/" (click)="navbarToggle()">Accueil<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-        <a class="nav-link" routerLink="/products">Nos Produits</a>
+        <a class="nav-link" routerLink="/products" (click)="navbarToggle()">Nos Produits</a>
       </li>
       <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-        <a class="nav-link" routerLink="/shopping-cart">
+        <a class="nav-link" routerLink="/shopping-cart" (click)="navbarToggle()">
           Panier
-          <span *ngIf="cart$ | async as cart" class="badge badge-warning badge-pill">
+          <span *ngIf="cart$ | async as cart" class="badge badge-warning badge-pill" (click)="navbarToggle()">
             {{ cart.totalItemsCount }}
           </span>
         </a>
       </li>
       <ng-template #anonymousUser>
           <li class="nav-item">
-              <a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/login">Connexion</a>
+              <a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" routerLink="/login" (click)="navbarToggle()">
+                Connexion
+              </a>
           </li>
       </ng-template>
       <li ngbDropdown *ngIf="appUser; else anonymousUser" class="nav-item dropdown">
@@ -30,12 +32,12 @@
           {{ appUser.name }}
         </a>
         <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" routerLink="/my/orders">Mes Commandes</a>
+          <a class="dropdown-item" routerLink="/my/orders" (click)="navbarToggle()">Mes Commandes</a>
           <ng-container *ngIf="appUser.isAdmin">
-            <a class="dropdown-item" routerLink="/admin/orders">Gestion des Commandes</a>
-            <a class="dropdown-item" routerLink="/admin/products">Gestion des Produits</a>
+            <a class="dropdown-item" routerLink="/admin/orders" (click)="navbarToggle()">Gestion des Commandes</a>
+            <a class="dropdown-item" routerLink="/admin/products" (click)="navbarToggle()">Gestion des Produits</a>
           </ng-container>
-          <a (click)="logout()" class="dropdown-item">Déconnexion</a>
+          <a (click)="logout()" class="dropdown-item" (click)="navbarToggle()">Déconnexion</a>
         </div>
       </li>
     </ul>
