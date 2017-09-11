@@ -10,3 +10,7 @@ h4, .h4 {
 .card-footer {
     padding: 0;
 }
+
+.card-footer button {
+    cursor: pointer;
+}
