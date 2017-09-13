@@ -1,3 +1,17 @@
-<p>
-  admin-orders works!
-</p>
+<h2>Orders</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders$ | async">
+      <td>{{ order.shipping.name }}</td>
+      <td>{{ order.datePlaced | date }}</td>
+      <td><a href="#">Editer</a></td>
+    </tr>
+  </tbody>
+</table>
