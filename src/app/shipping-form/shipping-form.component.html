@@ -25,6 +25,7 @@
     </div>
   </div>
   <button 
+    [disabled]="!f.valid"
     (click)="placeOrder()"
     class="btn btn-primary">Valider la Commande</button>
 </form>

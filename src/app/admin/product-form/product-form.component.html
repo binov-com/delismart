@@ -39,7 +39,11 @@
                 <div *ngIf="imageUrl.errors.url">Merci de renseigner une adresse valide.</div>    
               </div>
           </div>
-          <button class="btn btn-primary">Enregistrer</button>
+          <button 
+            [disabled]="!f.valid"
+            class="btn btn-primary">
+            Enregistrer
+          </button>
           <button type="button" (click)="delete()" class="btn btn-danger">Supprimer</button>
         </form>
   </div>
