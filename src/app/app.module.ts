@@ -1,3 +1,4 @@
+import { OrderService } from './order/order.service';
 import { ShoppingCartService } from './shopping-cart/shopping-cart.service';
 import { ProductService } from './product/product.service';
 import { CategoryService } from './category/category.service';
@@ -102,7 +103,8 @@ import { ProductQuantityComponent } from './product-quantity/product-quantity.co
     UserService,
     CategoryService,
     ProductService,
-    ShoppingCartService
+    ShoppingCartService,
+    OrderService
   ],
   bootstrap: [AppComponent]
   //schemas: [CUSTOM_ELEMENTS_SCHEMA],
