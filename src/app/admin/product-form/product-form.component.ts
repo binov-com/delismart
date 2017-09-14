@@ -1,7 +1,7 @@
-import { Product } from './../../models/product';
+import { Product } from '../../shared/models/product';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductService } from './../../product/product.service';
-import { CategoryService } from './../../category/category.service';
+import { ProductService } from '../../shared/services/product.service';
+import { CategoryService } from '../../shared/services/category.service';
 import { Component, OnInit } from '@angular/core';
 import 'rxjs/add/operator/take'; // unsubscripe after take the value(s)
 
