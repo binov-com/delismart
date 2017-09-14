@@ -1,9 +1,11 @@
-import { Product } from '../../../shared/models/product';
+import 'rxjs/add/operator/take';
+
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductService } from '../../../shared/services/product.service';
+
+import { Product } from '../../../shared/models/product';
 import { CategoryService } from '../../../shared/services/category.service';
-import { Component, OnInit } from '@angular/core';
-import 'rxjs/add/operator/take'; // unsubscripe after take the value(s)
+import { ProductService } from '../../../shared/services/product.service';
 
 @Component({
   selector: 'app-product-form',
