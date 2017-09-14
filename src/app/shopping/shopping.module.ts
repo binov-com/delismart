@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
-import { LoginComponent } from '../login/login.component';
+import { LoginComponent } from '../core/components/login/login.component';
 import { SharedModule } from '../shared/shared.module';
 import { AuthGuard } from './../shared/services/auth-guard.service';
 import { CheckOutComponent } from './components/check-out/check-out.component';
